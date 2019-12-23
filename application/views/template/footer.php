@@ -42,14 +42,6 @@
   <script src="<?php echo base_url('public/assets/js/demo/chart-area-demo.js'); ?>"></script>
   <script src="<?php echo base_url('public/assets/js/demo/chart-pie-demo.js'); ?>"></script>
 
-  <!-- Page level plugins -->
-  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-  <!-- Page level custom scripts -->
-  <script src="js/demo/datatables-demo.js"></script>
-
-
 </body>
 
 </html>
