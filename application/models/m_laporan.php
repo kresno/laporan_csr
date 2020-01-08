@@ -10,12 +10,12 @@ class M_laporan extends CI_Model{
     
     }
 
-    function insert($data)
+    public function insert($data)
     {
         return $this->db->insert("laporan", $data);
     }
 
-    function getall()
+    public function getall()
     {
         $this->db->select("nama, bidang, sasaran, anggaran, lokasi, file, tanggal_pelaksanaan, nama_kegiatan");
         $this->db->from("laporan");
