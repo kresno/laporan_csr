@@ -21,12 +21,12 @@ class Laporan extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('m_laporan');
+		$this->load->model('M_laporan');
 	}
 	
 	public function index()
 	{
-		$data['laporan'] = $this->m_laporan->getall();
+		$data['laporan'] = $this->M_laporan->getall();
 		
 		$this->load->view('template/header');
 		$this->load->view('laporan/content', $data);

@@ -3,7 +3,7 @@
  *
  */
 
-class m_laporan extends CI_Model{
+class M_laporan extends CI_Model{
     
     function __construct()
     {
