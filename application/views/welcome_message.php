@@ -14,7 +14,7 @@
 
           <!-- Content Row -->
           <div class="row">
-
+            
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-primary shadow h-100 py-2">
@@ -22,7 +22,14 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jumlah Perusahaan yang telah submit</div>
+                    <?php  
+                    if($dataper){ 
+                      foreach($dataper as $hasil): 
+                    ?>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php if($hasil->nama_perusahaan>0) echo $hasil->nama_perusahaan; ?></div>
+                    <?php endforeach; } else { ?>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                    <?php } ?>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -31,7 +38,12 @@
                 </div>
               </div>
             </div>
+            
 
+            <?php  
+              if($angkeg){ 
+                foreach($angkeg as $result): 
+            ?>
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-success shadow h-100 py-2">
@@ -39,7 +51,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Jumlah Uang yang telah direalisasikan</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. 0</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. <?php if($result->anggaran>0) echo number_format($result->anggaran); else echo '0'; ?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -49,6 +61,8 @@
               </div>
             </div>
 
+            
+
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-info shadow h-100 py-2">
@@ -56,7 +70,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Bidang yang di kelola</div>
-					  <div class="h5 mb-0 font-weight-bold text-gray-800">4</div>
+					            <div class="h5 mb-0 font-weight-bold text-gray-800">4</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -73,7 +87,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total Kegiatan</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">50</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php if($result->kegiatan>0) echo $result->kegiatan; else echo '0'; ?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -83,6 +97,8 @@
               </div>
             </div>
           </div>
+
+          <?php endforeach; } ?>
 
           <!-- Content Row -->
 
